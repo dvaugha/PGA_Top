@@ -37,24 +37,23 @@ const Dashboard = () => {
                 <TrendingUp className="w-6 h-6 text-emerald-400" /> FedExCup Top 10
             </h2>
 
-            <div className="player-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+            <div className="player-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-12">
                 {top10.map((player, index) => (
                     <motion.div
                         key={player.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.05 }}
-                        className={`group relative overflow-hidden rounded-xl border transition-all duration-300 ${index < 3 ? 'border-emerald-500/30 bg-slate-800/80 shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)]' : 'border-slate-700 bg-slate-800/40 hover:border-slate-500'
+                        className={`group relative overflow-hidden rounded-lg border transition-all duration-300 ${index < 3 ? 'border-emerald-500/30 bg-slate-800/80 shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)]' : 'border-slate-700 bg-slate-800/40 hover:border-slate-500'
                             }`}
                     >
-                        {/* Background Rank Number */}
-                        <div className="absolute -right-4 -top-6 text-[120px] font-black text-white/5 pointer-events-none select-none z-0 tracking-tighter">
+                        <div className="absolute -right-2 -top-4 text-[80px] font-black text-white/5 pointer-events-none select-none z-0 tracking-tighter">
                             {player.rank}
                         </div>
 
                         <div className="relative z-10 flex flex-col h-full">
-                            {/* Player Image Area */}
-                            <div className="h-32 w-full overflow-hidden relative">
+                            {/* Player Image Area - Ultra Compact */}
+                            <div className="h-24 w-full overflow-hidden relative">
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-80" />
                                 <img
                                     src={player.image}
@@ -63,34 +62,34 @@ const Dashboard = () => {
                                 />
 
                                 {index === 0 && (
-                                    <div className="absolute top-2 left-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded shadow-lg z-20 flex items-center gap-1">
-                                        <Trophy className="w-3 h-3" /> #1
+                                    <div className="absolute top-1 left-1 bg-yellow-500 text-black text-[10px] font-bold px-1.5 py-0.5 rounded shadow-lg z-20 flex items-center gap-1">
+                                        <Trophy className="w-2.5 h-2.5" /> #1
                                     </div>
                                 )}
                             </div>
 
                             {/* Content Area */}
-                            <div className="p-4 flex-1 flex flex-col justify-between">
+                            <div className="p-3 flex-1 flex flex-col justify-between">
                                 <div>
-                                    <div className="flex items-center justify-between mb-1">
-                                        <span className="text-xs font-mono text-emerald-400 tracking-wider">
+                                    <div className="flex items-center justify-between mb-0.5">
+                                        <span className="text-[10px] font-mono text-emerald-400 tracking-wider">
                                             {player.country}
                                         </span>
-                                        <span className="text-xs text-slate-500 font-bold">
+                                        <span className="text-[10px] text-slate-500 font-bold">
                                             {player.stats2026.points} PTS
                                         </span>
                                     </div>
-                                    <h3 className="font-bold text-lg leading-tight mb-2 text-white group-hover:text-emerald-400 transition-colors">
+                                    <h3 className="font-bold text-sm leading-tight mb-2 text-white group-hover:text-emerald-400 transition-colors truncate">
                                         {player.name}
                                     </h3>
 
-                                    <div className="grid grid-cols-2 gap-2 text-xs text-slate-400 mt-2">
-                                        <div className="bg-white/5 rounded p-2 text-center">
-                                            <div className="text-[10px] uppercase opacity-60">Avg Score</div>
+                                    <div className="grid grid-cols-2 gap-1 text-[10px] text-slate-400 mt-1">
+                                        <div className="bg-white/5 rounded p-1 text-center">
+                                            <div className="text-[9px] uppercase opacity-60">Avg Score</div>
                                             <div className="text-white font-mono">{player.stats2026.scoringAvg}</div>
                                         </div>
-                                        <div className="bg-white/5 rounded p-2 text-center">
-                                            <div className="text-[10px] uppercase opacity-60">Driving</div>
+                                        <div className="bg-white/5 rounded p-1 text-center">
+                                            <div className="text-[9px] uppercase opacity-60">Driving</div>
                                             <div className="text-white font-mono">{player.stats2026.drivingDist}</div>
                                         </div>
                                     </div>
@@ -98,9 +97,9 @@ const Dashboard = () => {
 
                                 <Link
                                     to={`/player/${player.id}`}
-                                    className="mt-4 w-full py-2 bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold text-sm rounded flex items-center justify-center transition-all group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]"
+                                    className="mt-3 w-full py-1.5 bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black font-semibold text-[10px] rounded flex items-center justify-center transition-all"
                                 >
-                                    View Analytics <ArrowRight className="w-3 h-3 ml-1" />
+                                    Analytics <ArrowRight className="w-2.5 h-2.5 ml-1" />
                                 </Link>
                             </div>
                         </div>
@@ -109,15 +108,40 @@ const Dashboard = () => {
             </div>
 
             {/* Secondary Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
                 {tournaments.slice(0, 4).map((t, i) => (
-                    <div key={i} className="glass-panel p-4 rounded-lg flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity">
-                        <div>
-                            <div className="text-xs text-slate-500 uppercase">{t.date}</div>
-                            <div className="font-semibold text-sm">{t.name}</div>
+                    <div key={i} className="glass-panel p-4 rounded-lg relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <Flag className="w-12 h-12" />
                         </div>
-                        <div className={`px-2 py-1 rounded text-xs ${t.status === 'Completed' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-blue-500/20 text-blue-400'}`}>
-                            {t.status}
+                        <div className="relative z-10">
+                            <div className="flex justify-between items-start mb-2">
+                                <div className="text-xs text-slate-500 uppercase font-mono">{t.date}</div>
+                                <div className={`px-2 py-0.5 rounded text-[10px] border ${t.status === 'Completed' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-blue-500/10 border-blue-500/30 text-blue-400'}`}>
+                                    {t.status}
+                                </div>
+                            </div>
+                            <div className="font-bold text-sm mb-1">{t.name}</div>
+                            <div className="text-xs text-slate-400 mb-3">{t.venue}</div>
+
+                            {/* Course Analysis Badge */}
+                            {t.favors && (
+                                <div className="mb-3 inline-flex items-center gap-1.5 px-2 py-1 rounded bg-slate-700/50 border border-slate-600">
+                                    <TrendingUp className="w-3 h-3 text-yellow-500" />
+                                    <span className="text-[10px] text-slate-300">Favors: <span className="text-white font-semibold">{t.favors}</span></span>
+                                </div>
+                            )}
+
+                            {t.venueLink && (
+                                <a
+                                    href={t.venueLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[10px] flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors"
+                                >
+                                    Course Info <ArrowRight className="w-2.5 h-2.5" />
+                                </a>
+                            )}
                         </div>
                     </div>
                 ))}

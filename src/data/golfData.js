@@ -165,10 +165,50 @@ otherNames.forEach((name, index) => {
 });
 
 export const tournaments = [
-    { id: 1, name: "The Sentry", date: "Jan 11", winner: "Canceled", status: "Canceled", location: "Kapalua, HI" },
-    { id: 2, name: "Sony Open in Hawaii", date: "Jan 15-18", winner: "Chris Gotterup", status: "Completed", score: "-22", location: "Honolulu, HI" },
-    { id: 3, name: "The American Express", date: "Jan 22-25", winner: "Scottie Scheffler", status: "Completed", score: "-27", location: "La Quinta, CA" },
-    { id: 4, name: "Farmers Insurance Open", date: "Jan 29-Feb 1", status: "Upcoming", location: "San Diego, CA" },
+    {
+        id: 1,
+        name: "The Sentry",
+        date: "Jan 4-7",
+        venue: "Kapalua Resort (Plantation)",
+        venueLink: "https://www.pgatour.com/tournaments/the-sentry/course",
+        defending: "Chris Kirk",
+        status: "Completed",
+        purse: "$20M",
+        favors: "Driving Accuracy"
+    },
+    {
+        id: 2,
+        name: "Sony Open in Hawaii",
+        date: "Jan 11-14",
+        venue: "Waialae Country Club",
+        venueLink: "https://www.pgatour.com/tournaments/sony-open-in-hawaii/course",
+        defending: "Grayson Murray",
+        status: "Upcoming",
+        purse: "$8.3M",
+        favors: "Putting"
+    },
+    {
+        id: 3,
+        name: "The American Express",
+        date: "Jan 18-21",
+        venue: "PGA WEST",
+        venueLink: "https://www.pgatour.com/tournaments/the-american-express/course",
+        defending: "Nick Dunlap",
+        status: "Upcoming",
+        purse: "$8.4M",
+        favors: "Birdie Average"
+    },
+    {
+        id: 4,
+        name: "Farmers Insurance Open",
+        date: "Jan 24-27",
+        venue: "Torrey Pines",
+        venueLink: "https://www.pgatour.com/tournaments/farmers-insurance-open/course",
+        defending: "Matthieu Pavon",
+        status: "Upcoming",
+        purse: "$9M",
+        favors: "Driving Distance"
+    },
     { id: 5, name: "WM Phoenix Open", date: "Feb 5-8", status: "Upcoming", location: "Scottsdale, AZ" },
     { id: 6, name: "AT&T Pebble Beach Pro-Am", date: "Feb 12-15", status: "Upcoming", location: "Pebble Beach, CA" },
     { id: 7, name: "The Genesis Invitational", date: "Feb 19-22", status: "Upcoming", location: "Pacific Palisades, CA" },
