@@ -37,7 +37,7 @@ const Dashboard = () => {
                 <TrendingUp className="w-6 h-6 text-emerald-400" /> FedExCup Top 10
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+            <div className="player-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
                 {top10.map((player, index) => (
                     <motion.div
                         key={player.id}

@@ -1,20 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --font-main: 'Outfit', sans-serif;
-    --bg-dark: #020617;
-    --bg-panel: rgba(30, 41, 59, 0.7);
-    --bg-card: rgba(15, 23, 42, 0.8);
-    --primary: #10b981;
-    --primary-glow: rgba(16, 185, 129, 0.4);
-    --accent: #3b82f6;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border: rgba(255, 255, 255, 0.1);
-  }
+:root {
+  --font-main: 'Outfit', sans-serif;
+  --bg-dark: #020617;
+  --bg-panel: rgba(30, 41, 59, 0.7);
+  --bg-card: rgba(15, 23, 42, 0.8);
+  --primary: #10b981;
+  --text-main: #f8fafc;
 }
 
 body {
@@ -26,49 +22,47 @@ body {
     radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.09), transparent 25%);
 }
 
-.glass-panel {
-  background: var(--bg-panel);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
+/* --- CRITICAL: HARDCODED LAYOUT --- */
+/* This ensures layout works even if styling build fails */
 
-/* Force critical layout classes to exist even if Purge fails */
-.grid {
+.player-grid {
   display: grid;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(1, 1fr);
+  /* Mobile default */
+  gap: 1.5rem;
 }
 
 @media (min-width: 640px) {
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .player-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 768px) {
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .player-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .player-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* Image constraints - Force small height */
+.player-grid img {
+  height: 200px !important;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Card Container constraints */
+.player-grid>div {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
 }

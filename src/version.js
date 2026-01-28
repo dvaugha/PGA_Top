@@ -1,1 +1,1 @@
-export const APP_VERSION = "v2.1 (Tailwind Fix)";
+export const APP_VERSION = "v2.2 (Hard CSS)";
