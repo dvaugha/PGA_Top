@@ -107,44 +107,62 @@ const Dashboard = () => {
                 ))}
             </div>
 
-            {/* Secondary Stats Row */}
+            {/* Tournament Calendar */}
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-blue-400" /> Upcoming Schedule
+            </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-                {tournaments.slice(0, 4).map((t, i) => (
-                    <div key={i} className="glass-panel p-4 rounded-lg relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <Flag className="w-12 h-12" />
-                        </div>
-                        <div className="relative z-10">
-                            <div className="flex justify-between items-start mb-2">
-                                <div className="text-xs text-slate-500 uppercase font-mono">{t.date}</div>
-                                <div className={`px-2 py-0.5 rounded text-[10px] border ${t.status === 'Completed' ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-blue-500/10 border-blue-500/30 text-blue-400'}`}>
-                                    {t.status}
+                {tournaments.slice(0, 4).map((t, i) => {
+                    // Quick parse of date string "Jan 4-7" -> Month: Jan, Days: 4-7
+                    const [month, days] = t.date.split(' ');
+
+                    return (
+                        <div key={i} className="glass-panel p-0 rounded-xl overflow-hidden relative group hover:bg-slate-800/60 transition-colors">
+                            <div className="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <Flag className="w-20 h-20" />
+                            </div>
+
+                            <div className="flex h-full">
+                                {/* Calendar Date Column */}
+                                <div className="bg-white/5 w-16 flex flex-col items-center justify-center border-r border-white/5 p-2 text-center">
+                                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">{month}</span>
+                                    <span className="text-lg font-black text-white">{days.split('-')[0]}</span>
+                                    <span className="text-[10px] text-slate-500 mt-1">{t.status === 'Completed' ? 'DONE' : 'UPCOMING'}</span>
+                                </div>
+
+                                {/* Event Info */}
+                                <div className="p-3 flex-1 flex flex-col justify-center z-10">
+                                    <h4 className="font-bold text-sm text-white leading-tight mb-1">{t.name}</h4>
+                                    <div className="text-xs text-slate-400 mb-2 truncate">{t.venue}</div>
+
+                                    <div className="mt-auto space-y-2">
+                                        {/* Favors Stat */}
+                                        {t.favors && (
+                                            <div className="flex items-center gap-1.5 text-[10px]">
+                                                <TrendingUp className="w-3 h-3 text-yellow-500" />
+                                                <span className="text-slate-400">Favors:</span>
+                                                <span className="text-emerald-300 font-semibold">{t.favors}</span>
+                                            </div>
+                                        )}
+
+                                        {/* Course Link */}
+                                        {t.venueLink && (
+                                            <a
+                                                href={t.venueLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1 text-[10px] bg-blue-500/10 hover:bg-blue-500 text-blue-400 hover:text-white px-2 py-1 rounded transition-all"
+                                            >
+                                                Course Info <ArrowRight className="w-2.5 h-2.5" />
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                            <div className="font-bold text-sm mb-1">{t.name}</div>
-                            <div className="text-xs text-slate-400 mb-3">{t.venue}</div>
-
-                            {/* Course Analysis Badge */}
-                            {t.favors && (
-                                <div className="mb-3 inline-flex items-center gap-1.5 px-2 py-1 rounded bg-slate-700/50 border border-slate-600">
-                                    <TrendingUp className="w-3 h-3 text-yellow-500" />
-                                    <span className="text-[10px] text-slate-300">Favors: <span className="text-white font-semibold">{t.favors}</span></span>
-                                </div>
-                            )}
-
-                            {t.venueLink && (
-                                <a
-                                    href={t.venueLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-[10px] flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors"
-                                >
-                                    Course Info <ArrowRight className="w-2.5 h-2.5" />
-                                </a>
-                            )}
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
         </div>
