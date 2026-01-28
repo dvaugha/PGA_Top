@@ -73,9 +73,22 @@ body {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+  /* Player Grid Override */
   .player-grid {
     grid-template-columns: repeat(5, 1fr);
   }
+
+  /* Schedule Grid Override */
+  .schedule-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Calendar Card Layout - Force Flex */
+.calendar-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
 }
 
 /* Image constraints - Force small height */

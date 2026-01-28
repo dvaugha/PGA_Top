@@ -112,13 +112,13 @@ const Dashboard = () => {
                 <Calendar className="w-5 h-5 text-blue-400" /> Upcoming Schedule
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div className="schedule-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
                 {tournaments.slice(0, 4).map((t, i) => {
                     // Quick parse of date string "Jan 4-7" -> Month: Jan, Days: 4-7
                     const [month, days] = t.date.split(' ');
 
                     return (
-                        <div key={i} className="glass-panel p-0 rounded-xl overflow-hidden relative group hover:bg-slate-800/60 transition-colors">
+                        <div key={i} className="calendar-card glass-panel p-0 rounded-xl overflow-hidden relative group hover:bg-slate-800/60 transition-colors">
                             <div className="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-10 transition-opacity">
                                 <Flag className="w-20 h-20" />
                             </div>
