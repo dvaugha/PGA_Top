@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Trophy, TrendingUp, DollarSign, Flag } from 'lucide-react';
+import { ArrowRight, Trophy, TrendingUp, DollarSign, Flag, Calendar } from 'lucide-react';
 import { players, tournaments } from '../data/golfData';
 
 const Dashboard = () => {
