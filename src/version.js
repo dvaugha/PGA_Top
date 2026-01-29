@@ -1,1 +1,1 @@
-export const APP_VERSION = "v2.8 (Mini Grid)";
+export const APP_VERSION = "v2.9 (Build Fix)";
