@@ -73,9 +73,9 @@ body {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  /* Player Grid Override */
+  /* Player Grid Override - Ultra Compact */
   .player-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
 
   /* Schedule Grid Override */
@@ -89,11 +89,12 @@ body {
   display: flex !important;
   flex-direction: row !important;
   align-items: stretch !important;
+  cursor: pointer;
 }
 
 /* Image constraints - Force small height */
 .player-grid img {
-  height: 140px !important;
+  height: 85px !important;
   width: 100%;
   object-fit: cover;
   object-position: top;

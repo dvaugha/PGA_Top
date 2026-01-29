@@ -207,10 +207,47 @@ export const tournaments = [
         defending: "Matthieu Pavon",
         status: "Upcoming",
         purse: "$9M",
-        favors: "Driving Distance"
+        favors: "Driving Distance",
+        courseInfo: {
+            par: 72,
+            yards: 7765,
+            designer: "William Bell / Rees Jones",
+            description: "Torrey Pines South is the longest course on the PGA Tour. It requires massive driving distance and patience. The rough is penal and the greens are somewhat bumpy poa annua.",
+            signatureHoles: [3, 13, 18]
+        }
     },
-    { id: 5, name: "WM Phoenix Open", date: "Feb 5-8", status: "Upcoming", location: "Scottsdale, AZ" },
-    { id: 6, name: "AT&T Pebble Beach Pro-Am", date: "Feb 12-15", status: "Upcoming", location: "Pebble Beach, CA" },
+    {
+        id: 5,
+        name: "WM Phoenix Open",
+        date: "Feb 5-8",
+        status: "Upcoming",
+        venue: "TPC Scottsdale",
+        favors: "Ball Striking",
+        venueLink: "https://www.pgatour.com/tournaments/wm-phoenix-open/course",
+        courseInfo: {
+            par: 71,
+            yards: 7261,
+            designer: "Tom Weiskopf",
+            description: "Home of the famous 'Stadium Hole' 16th. A desert layout that rewards aggressive play but punishes wayward drives.",
+            signatureHoles: [16, 17]
+        }
+    },
+    {
+        id: 6,
+        name: "AT&T Pebble Beach Pro-Am",
+        date: "Feb 12-15",
+        status: "Upcoming",
+        venue: "Pebble Beach GL",
+        favors: "Scrambling",
+        venueLink: "https://www.pgatour.com/tournaments/att-pebble-beach-pro-am/course",
+        courseInfo: {
+            par: 72,
+            yards: 6816,
+            designer: "Jack Neville",
+            description: "Ideally located on the Monterey Peninsula. Very small greens require precision iron play.",
+            signatureHoles: [7, 8, 18]
+        }
+    },
     { id: 7, name: "The Genesis Invitational", date: "Feb 19-22", status: "Upcoming", location: "Pacific Palisades, CA" },
     { id: 8, name: "Cognizant Classic", date: "Feb 26-Mar 1", status: "Upcoming", location: "Palm Beach Gardens, FL" },
     { id: 9, name: "Arnold Palmer Invitational", date: "Mar 5-8", status: "Upcoming", location: "Orlando, FL" },

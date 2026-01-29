@@ -6,6 +6,7 @@ import PlayerDetail from './pages/PlayerDetail';
 import Rankings from './pages/Rankings'; // Placeholder for now
 import Schedule from './pages/Schedule'; // Placeholder for now
 import NetWorth from './pages/NetWorth'; // Placeholder for now
+import TournamentDetail from './pages/TournamentDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/player/:id" element={<PlayerDetail />} />
+            <Route path="/tournament/:id" element={<TournamentDetail />} />
             <Route path="/rankings" element={<Rankings />} />
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/net-worth" element={<NetWorth />} />
