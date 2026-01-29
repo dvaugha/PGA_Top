@@ -19,7 +19,7 @@ xcopy /E /I /Y dist\assets assets >nul
 :: 4. Git Push
 echo [INFO] Pushing to GitHub...
 git add .
-git commit -m "Update Site (Auto-Deploy)"
+git commit -m "v3.4 - Schedule Grid & Dashboard Fixes"
 git push origin main
 
 echo.

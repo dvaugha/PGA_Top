@@ -1,1 +1,1 @@
-export const APP_VERSION = "v3.3 (Grid Forced)";
+export const APP_VERSION = "v3.4 (Schedule Grid)";

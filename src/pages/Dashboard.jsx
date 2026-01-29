@@ -40,30 +40,31 @@ const Dashboard = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: index * 0.05 }}
-                        className={`group relative overflow-hidden rounded border flex flex-col transition-all duration-300 ${index < 3 ? 'border-emerald-500/40 bg-slate-900/80' : 'border-slate-800 bg-slate-900/50 hover:border-slate-600'
+                        className={`group relative overflow-hidden rounded-xl border flex flex-col items-center pt-4 pb-2 transition-all duration-300 ${index < 3 ? 'border-emerald-500/40 bg-slate-900/80 shadow-[0_0_15px_rgba(16,185,129,0.1)]' : 'border-slate-800 bg-slate-900/50 hover:border-slate-600'
                             }`}
                     >
                         {/* 1. IMAGE SECTION */}
-                        <div className="h-20 w-full relative">
-                            <img
-                                src={player.image}
-                                alt={player.name}
-                                className="w-full h-full object-cover object-top"
-                            />
-                            <div className={`absolute top-0 right-0 px-1.5 py-0.5 text-[10px] font-black tracking-tighter ${index === 0 ? 'bg-yellow-500 text-black' : 'bg-slate-800/90 text-white'}`}>
+                        <div className="relative mb-2">
+                            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500/30 group-hover:border-emerald-500/60 transition-colors">
+                                <img
+                                    src={player.image}
+                                    alt={player.name}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className={`absolute -top-1 -right-2 px-1.5 py-0.5 text-[10px] font-black tracking-tighter rounded-full ${index === 0 ? 'bg-yellow-500 text-black' : 'bg-slate-800 text-white border border-slate-700'}`}>
                                 #{player.rank}
                             </div>
                         </div>
 
                         {/* 2. CONTENT SECTION */}
-                        <div className="p-2 flex flex-col justify-between bg-slate-900/40 h-full">
-                            <div>
-                                <div className="text-[9px] text-emerald-400 font-mono mb-0.5">{player.stats2026.points} pts</div>
-                                <h3 className="font-bold text-[10px] leading-3 text-white mb-2 line-clamp-2">
-                                    {player.name}
-                                </h3>
-                            </div>
-                            <Link to={`/player/${player.id}`} className="block w-full text-center py-1 bg-white/5 hover:bg-emerald-500 text-[9px] text-slate-400 hover:text-white rounded transition-colors">
+                        <div className="px-2 flex flex-col items-center w-full">
+                            <h3 className="font-bold text-[11px] leading-3 text-white mb-1 text-center line-clamp-1">
+                                {player.name}
+                            </h3>
+                            <div className="text-[10px] text-emerald-400 font-mono mb-2">{player.stats2026.points} pts</div>
+
+                            <Link to={`/player/${player.id}`} className="block w-full text-center py-1 bg-white/5 hover:bg-emerald-500 text-[9px] text-slate-400 hover:text-white rounded transition-colors uppercase tracking-wider font-semibold">
                                 View
                             </Link>
                         </div>
@@ -78,16 +79,16 @@ const Dashboard = () => {
 
             {/* FORCE DESKTOP LAYOUT (Grid 4) */}
             <div className="grid grid-cols-4 gap-4 mb-12 min-w-[800px]">
-                {tournaments.slice(0, 4).map((t, i) => {
+                {tournaments.filter(t => t.status !== 'Completed').slice(0, 4).map((t, i) => {
                     const [month, days] = t.date.split(' ');
 
                     return (
                         <Link
                             to={`/tournament/${t.id}`}
                             key={i}
-                            className="calendar-card glass-panel p-0 rounded-xl overflow-hidden relative group hover:bg-slate-800/60 transition-colors flex flex-row"
+                            className="calendar-card glass-panel p-0 rounded-xl overflow-hidden relative group hover:bg-slate-800/60 transition-all hover:-translate-y-1 block h-full border border-transparent hover:border-emerald-500/30"
                         >
-                            <div className="flex w-full">
+                            <div className="flex w-full h-full">
                                 {/* Left: Date Box */}
                                 <div className="bg-white/5 w-14 flex flex-col items-center justify-center border-r border-white/5 p-2 text-center shrink-0">
                                     <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">{month}</span>
@@ -96,16 +97,16 @@ const Dashboard = () => {
 
                                 {/* Right: Info */}
                                 <div className="p-2 flex-1 flex flex-col justify-center min-w-0">
-                                    <div className="flex justify-between items-start">
-                                        <h4 className="font-bold text-xs text-white leading-tight mb-1 truncate pr-1">{t.name}</h4>
-                                        <Flag className="w-3 h-3 text-slate-600 shrink-0" />
+                                    <div className="flex justify-between items-start mb-1">
+                                        <h4 className="font-bold text-xs text-white leading-tight truncate pr-1 group-hover:text-emerald-400 transition-colors">{t.name}</h4>
+                                        <Flag className="w-3 h-3 text-slate-600 shrink-0 group-hover:text-emerald-500" />
                                     </div>
-                                    <div className="text-[9px] text-slate-400 mb-1 truncate">{t.venue}</div>
+                                    <div className="text-[9px] text-slate-400 mb-2 truncate">{t.venue}</div>
 
                                     {t.favors && (
-                                        <div className="inline-flex items-center gap-1 text-[8px] bg-slate-800/50 px-1.5 py-0.5 rounded self-start border border-slate-700/50 mt-auto">
+                                        <div className="inline-flex items-center gap-1 text-[8px] bg-slate-800/50 px-1.5 py-0.5 rounded self-start border border-slate-700/50 mt-auto group-hover:bg-slate-800 group-hover:text-slate-200">
                                             <Target className="w-2 h-2 text-yellow-500" />
-                                            <span className="text-slate-300">Fit: {t.favors}</span>
+                                            <span className="text-slate-400 group-hover:text-slate-300">Fit: {t.favors}</span>
                                         </div>
                                     )}
                                 </div>

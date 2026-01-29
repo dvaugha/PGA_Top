@@ -183,7 +183,9 @@ export const tournaments = [
         venue: "Waialae Country Club",
         venueLink: "https://www.pgatour.com/tournaments/sony-open-in-hawaii/course",
         defending: "Grayson Murray",
-        status: "Upcoming",
+        status: "Completed",
+        winner: "Chris Gotterup",
+        score: "-22",
         purse: "$8.3M",
         favors: "Putting"
     },
@@ -194,7 +196,9 @@ export const tournaments = [
         venue: "PGA WEST",
         venueLink: "https://www.pgatour.com/tournaments/the-american-express/course",
         defending: "Nick Dunlap",
-        status: "Upcoming",
+        status: "Completed",
+        winner: "Scottie Scheffler",
+        score: "-27",
         purse: "$8.4M",
         favors: "Birdie Average"
     },
