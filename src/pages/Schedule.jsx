@@ -6,19 +6,52 @@ import { motion } from 'framer-motion';
 import { MapPin, Trophy, Calendar } from 'lucide-react';
 
 const Schedule = () => {
+    const [visibleCount, setVisibleCount] = React.useState(9);
+    const [isUpdating, setIsUpdating] = React.useState(false);
+
+    const handleUpdate = () => {
+        setIsUpdating(true);
+        setTimeout(() => {
+            setVisibleCount(tournaments.length);
+            setIsUpdating(false);
+        }, 800);
+    };
+
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold mb-8">2026 Tour Schedule</h1>
+            <div className="flex justify-between items-center mb-8">
+                <h1 className="text-4xl font-bold">2026 Tour Schedule</h1>
+                {visibleCount < tournaments.length && (
+                    <button
+                        onClick={handleUpdate}
+                        disabled={isUpdating}
+                        className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-bold py-2 px-6 rounded-lg transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        {isUpdating ? (
+                            <>
+                                <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                                Updating...
+                            </>
+                        ) : (
+                            <>
+                                <Calendar className="w-5 h-5" />
+                                Update Schedule
+                            </>
+                        )}
+                    </button>
+                )}
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {tournaments.map((evt, index) => (
+                {tournaments.slice(0, visibleCount).map((evt, index) => (
                     <Link to={`/tournament/${evt.id}`} key={evt.id} className="block h-full">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.05 }}
                             className={`glass-panel p-5 rounded-xl flex flex-col justify-between h-full relative overflow-hidden border-t-4 ${evt.status === 'Completed' ? 'border-t-emerald-500' : evt.status === 'Canceled' ? 'border-t-red-500' : 'border-t-blue-500'
-                                }`}
+                                } hover:bg-white/5 transition-colors`}
                         >
                             <div className="mb-4">
                                 <div className="flex justify-between items-start mb-2">
@@ -68,6 +101,12 @@ const Schedule = () => {
                     </Link>
                 ))}
             </div>
+
+            {visibleCount < tournaments.length && (
+                <div className="mt-8 text-center">
+                    <p className="text-slate-500 text-sm mb-4">Showing {visibleCount} of {tournaments.length} events</p>
+                </div>
+            )}
         </div>
     );
 };

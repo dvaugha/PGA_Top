@@ -252,8 +252,54 @@ export const tournaments = [
             signatureHoles: [7, 8, 18]
         }
     },
-    { id: 7, name: "The Genesis Invitational", date: "Feb 19-22", status: "Upcoming", location: "Pacific Palisades, CA" },
-    { id: 8, name: "Cognizant Classic", date: "Feb 26-Mar 1", status: "Upcoming", location: "Palm Beach Gardens, FL" },
-    { id: 9, name: "Arnold Palmer Invitational", date: "Mar 5-8", status: "Upcoming", location: "Orlando, FL" },
-    { id: 10, name: "The Players Championship", date: "Mar 12-15", status: "Upcoming", location: "Ponte Vedra Beach, FL" }
+    { id: 7, name: "The Genesis Invitational", date: "Feb 19-22", status: "Upcoming", venue: "Riviera CC", purse: "$20M", favors: "Ball Striking" },
+    { id: 8, name: "Cognizant Classic", date: "Feb 26-Mar 1", status: "Upcoming", venue: "PGA National", purse: "$9M", favors: "Avoid Water" },
+    { id: 9, name: "Arnold Palmer Invitational", date: "Mar 5-8", status: "Upcoming", venue: "Bay Hill", purse: "$20M", favors: "Long Irons" },
+    { id: 10, name: "The Players Championship", date: "Mar 12-15", status: "Upcoming", venue: "TPC Sawgrass", purse: "$25M", favors: "Iron Play" },
+    { id: 11, name: "Valspar Championship", date: "Mar 19-22", status: "Upcoming", venue: "Innisbrook (Copperhead)", purse: "$8.4M", favors: "Precision" },
+    { id: 12, name: "Texas Children's Houston Open", date: "Mar 26-29", status: "Upcoming", venue: "Memorial Park", purse: "$9M", favors: "Short Game" },
+    { id: 13, name: "Valero Texas Open", date: "Apr 2-5", status: "Upcoming", venue: "TPC San Antonio", purse: "$9.2M", favors: "Wind Play" },
+    {
+        id: 14,
+        name: "The Masters",
+        date: "Apr 9-12",
+        status: "Upcoming",
+        venue: "Augusta National",
+        purse: "$20M",
+        favors: "Short Game & Creativity",
+        venueLink: "https://www.masters.com/en_US/course/index.html"
+    },
+    { id: 15, name: "RBC Heritage", date: "Apr 16-19", status: "Upcoming", venue: "Harbour Town", purse: "$20M", favors: "Accuracy" },
+    {
+        id: 16,
+        name: "PGA Championship",
+        date: "May 14-17",
+        status: "Upcoming",
+        venue: "Quail Hollow",
+        purse: "$18.5M",
+        favors: "Driving Distance"
+    },
+    { id: 17, name: "The Memorial Tournament", date: "Jun 4-7", status: "Upcoming", venue: "Muirfield Village", purse: "$20M", favors: "Iron Play" },
+    {
+        id: 18,
+        name: "U.S. Open",
+        date: "Jun 18-21",
+        status: "Upcoming",
+        venue: "Oakmont CC",
+        purse: "$21.5M",
+        favors: "Mental Toughness"
+    },
+    { id: 19, name: "Travelers Championship", date: "Jun 25-28", status: "Upcoming", venue: "TPC River Highlands", purse: "$20M", favors: "Birdie Making" },
+    {
+        id: 20,
+        name: "The Open Championship",
+        date: "Jul 16-19",
+        status: "Upcoming",
+        venue: "Royal Birkdale",
+        purse: "$17M",
+        favors: "Links Golf"
+    },
+    { id: 21, name: "FedEx St. Jude Championship", date: "Aug 13-16", status: "Upcoming", venue: "TPC Southwind", purse: "$20M", favors: "Approach Play" },
+    { id: 22, name: "BMW Championship", date: "Aug 20-23", status: "Upcoming", venue: "Caves Valley", purse: "$20M", favors: "Scoring" },
+    { id: 23, name: "TOUR Championship", date: "Aug 27-30", status: "Upcoming", venue: "East Lake", purse: "$100M", favors: "Consistency" }
 ];
