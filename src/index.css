@@ -84,6 +84,15 @@ body {
   }
 }
 
+/* EXPLICT DESKTOP OVERRIDE FOR SCHEDULE */
+@media (min-width: 1024px) {
+  .schedule-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem;
+  }
+}
+
 /* Calendar Card Layout - Force Flex */
 .calendar-card {
   display: flex !important;

@@ -53,7 +53,7 @@ export const players = [
         name: "Robert MacIntyre",
         rank: 5,
         country: "SCO",
-        image: "https://pga-tour-res.cloudinary.com/image/upload/c_fill,h_300,w_300/headshots_52372.png",
+        image: "https://ui-avatars.com/api/?name=Robert+MacIntyre&background=0D8ABC&color=fff",
         netWorth: "$15M",
         contracts: ["Nike", "Titleist"],
         stats2026: { scoringAvg: 69.70, drivingDist: 308.0, sgTotal: 1.550, wins: 0, top10s: 0, points: 1000 },
