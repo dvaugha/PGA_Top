@@ -103,7 +103,7 @@ body {
 
 /* Image constraints - Force small height */
 .player-grid img {
-  height: 85px !important;
+  height: 96px !important;
   width: 100%;
   object-fit: cover;
   object-position: top;

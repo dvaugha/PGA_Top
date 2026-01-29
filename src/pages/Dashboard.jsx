@@ -44,7 +44,7 @@ const Dashboard = () => {
                     >
                         <div className="relative z-10 flex flex-col h-full">
                             {/* Ultra Mini Image */}
-                            <div className="h-16 w-full overflow-hidden relative">
+                            <div className="h-24 w-full shrink-0 overflow-hidden relative">
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 opacity-60" />
                                 <img
                                     src={player.image}
@@ -86,7 +86,7 @@ const Dashboard = () => {
                 <Calendar className="w-5 h-5 text-blue-400" /> Upcoming Schedule <span className="text-xs font-normal text-slate-500 ml-2">(Click for Course Info)</span>
             </h2>
 
-            <div className="schedule-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div className="flex flex-wrap gap-4 mb-12 w-full">
                 {tournaments.slice(0, 4).map((t, i) => {
                     const [month, days] = t.date.split(' ');
 

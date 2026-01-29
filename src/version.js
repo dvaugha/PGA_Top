@@ -1,1 +1,1 @@
-export const APP_VERSION = "v3.0 (Schedule Force)";
+export const APP_VERSION = "v3.1 (Flex Fix)";
