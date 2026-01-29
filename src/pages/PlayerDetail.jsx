@@ -153,26 +153,45 @@ const PlayerDetail = () => {
                             <th className="p-4 font-medium">Tournament</th>
                             <th className="p-4 font-medium">Position</th>
                             <th className="p-4 font-medium text-right">Score</th>
+                            <th className="p-4 font-medium text-right text-emerald-400">Winnings</th>
+                            <th className="p-4 font-medium text-right text-red-400">Tax (Est)</th>
+                            <th className="p-4 font-medium text-right text-white">Net</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-800">
                         {player.recentResults.length > 0 ? (
-                            player.recentResults.map((result, idx) => (
-                                <tr key={idx} className="hover:bg-white/5 transition-colors">
-                                    <td className="p-4 font-medium">{result.event}</td>
-                                    <td className="p-4">
-                                        <span className={`px-2 py-1 rounded text-xs font-bold ${result.position === '1' ? 'bg-yellow-500/20 text-yellow-500' :
+                            player.recentResults.map((result, idx) => {
+                                // Basic parsing for clean calculation
+                                const rawEarnings = result.earnings ? parseInt(result.earnings.replace(/[$,]/g, '')) || 0 : 0;
+                                const estTax = Math.floor(rawEarnings * 0.45); // Approx 45% tax
+                                const netEarnings = rawEarnings - estTax;
+
+                                return (
+                                    <tr key={idx} className="hover:bg-white/5 transition-colors">
+                                        <td className="p-4 font-medium">{result.event}</td>
+                                        <td className="p-4">
+                                            <span className={`px-2 py-1 rounded text-xs font-bold ${result.position === '1' ? 'bg-yellow-500/20 text-yellow-500' :
                                                 result.position.startsWith('T') && parseInt(result.position.substring(1)) <= 10 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-700 text-slate-300'
-                                            }`}>
-                                            {result.position}
-                                        </span>
-                                    </td>
-                                    <td className="p-4 text-right font-mono">{result.score}</td>
-                                </tr>
-                            ))
+                                                }`}>
+                                                {result.position}
+                                            </span>
+                                        </td>
+                                        <td className="p-4 text-right font-mono text-slate-300">{result.score}</td>
+                                        <td className="p-4 text-right font-mono text-emerald-400 font-bold">
+                                            {result.earnings || '-'}
+                                        </td>
+                                        <td className="p-4 text-right font-mono text-red-400 text-xs">
+                                            {rawEarnings > 0 ? `-$${estTax.toLocaleString()}` : '-'}
+                                        </td>
+                                        <td className="p-4 text-right font-mono font-bold text-white">
+                                            {rawEarnings > 0 ? `$${netEarnings.toLocaleString()}` : '-'}
+                                        </td>
+                                    </tr>
+                                );
+                            })
                         ) : (
                             <tr>
-                                <td colSpan="3" className="p-6 text-center text-slate-500">No results recorded yet for 2026.</td>
+                                <td colSpan="6" className="p-6 text-center text-slate-500">No results recorded yet for 2026.</td>
                             </tr>
                         )}
                     </tbody>

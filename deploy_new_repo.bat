@@ -20,7 +20,7 @@ xcopy /E /I /Y dist\assets assets >nul
 :: 4. Git Push
 echo [INFO] Pushing to GitHub...
 git add .
-git commit -m "v3.5 - Schedule Update Feature"
+git commit -m "v3.6 - Player Financial Breakdown (Net/Gross)"
 git push origin main
 
 echo.

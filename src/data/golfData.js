@@ -10,7 +10,7 @@ export const players = [
         contracts: ["Nike", "TaylorMade", "Rolex", "NetJets", "Huntington Bank"],
         stats2026: { scoringAvg: 68.34, drivingDist: 323.9, sgTotal: 3.385, wins: 1, top10s: 2, points: 2150 },
         stats2025: { scoringAvg: 68.63, drivingDist: 321.0, sgTotal: 2.500, wins: 3, top10s: 15 },
-        recentResults: [{ event: "The American Express", position: "1", score: "-27" }, { event: "Sony Open in Hawaii", position: "DNP", score: "-" }]
+        recentResults: [{ event: "The American Express", position: "1", score: "-27", earnings: "$1,512,000" }, { event: "Sony Open in Hawaii", position: "DNP", score: "-", earnings: "$0" }]
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ export const players = [
         contracts: ["Nike", "TaylorMade", "Omega", "Workday"],
         stats2026: { scoringAvg: 69.12, drivingDist: 326.0, sgTotal: 2.100, wins: 0, top10s: 1, points: 1500 },
         stats2025: { scoringAvg: 68.90, drivingDist: 325.5, sgTotal: 2.150, wins: 2, top10s: 10 },
-        recentResults: [{ event: "The American Express", position: "T12", score: "-18" }]
+        recentResults: [{ event: "The American Express", position: "T12", score: "-18", earnings: "$182,500" }]
     },
     {
         id: 3,
@@ -70,7 +70,7 @@ export const players = [
         contracts: ["Adidas", "Callaway", "Aon"],
         stats2026: { scoringAvg: 68.95, drivingDist: 315.2, sgTotal: 1.950, wins: 0, top10s: 1, points: 950 },
         stats2025: { scoringAvg: 69.10, drivingDist: 314.0, sgTotal: 1.800, wins: 1, top10s: 8 },
-        recentResults: [{ event: "The American Express", position: "T8", score: "-20" }]
+        recentResults: [{ event: "The American Express", position: "T8", score: "-20", earnings: "$254,000" }]
     },
     {
         id: 7,
@@ -130,7 +130,7 @@ export const players = [
         contracts: ["Ping", "J.Lindeberg", "Cisco"],
         stats2026: { scoringAvg: 69.20, drivingDist: 312.0, sgTotal: 1.700, wins: 0, top10s: 0, points: 400 },
         stats2025: { scoringAvg: 68.85, drivingDist: 311.5, sgTotal: 2.050, wins: 1, top10s: 9 },
-        recentResults: [{ event: "The American Express", position: "T25", score: "-16" }]
+        recentResults: [{ event: "The American Express", position: "T25", score: "-16", earnings: "$65,500" }]
     },
     {
         id: 17,
@@ -142,7 +142,7 @@ export const players = [
         contracts: ["Callaway", "TravisMathew"],
         stats2026: { scoringAvg: 66.78, drivingDist: 310.5, sgTotal: 2.800, wins: 1, top10s: 1, points: 1200 },
         stats2025: { scoringAvg: 70.50, drivingDist: 308.2, sgTotal: 0.500, wins: 0, top10s: 3 },
-        recentResults: [{ event: "Sony Open in Hawaii", position: "1", score: "-22" }]
+        recentResults: [{ event: "Sony Open in Hawaii", position: "1", score: "-22", earnings: "$1,494,000" }]
     }
 ];
 
