@@ -3,8 +3,9 @@ echo ==========================================
 echo PGA_Top Deployer (Fresh Start)
 echo ==========================================
 
-:: 1. Clean
+:: 1. Clean & Restore Source
 if exist dist rmdir /s /q dist
+copy /Y index.source.html index.html >nul
 
 :: 2. Build
 echo [INFO] Building project...
