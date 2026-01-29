@@ -198,9 +198,27 @@ const PlayerDetail = () => {
                 </table>
             </div>
 
+            {/* Bag Analysis Section */}
+            {player.clubDistances && (
+                <div className="mt-8">
+                    <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <Target className="w-6 h-6 text-red-400" /> Bag Analysis & Yardages
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+                        {Object.entries(player.clubDistances).map(([club, yardage]) => (
+                            <div key={club} className="bg-slate-900/50 border border-slate-800 p-3 rounded-lg flex flex-col items-center justify-center hover:border-emerald-500/50 transition-colors">
+                                <div className="text-slate-400 text-xs uppercase font-bold mb-1">{club}</div>
+                                <div className="text-xl font-black text-white">{yardage}</div>
+                                <div className="text-[9px] text-slate-500">yards</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 };
-import { Activity } from 'lucide-react'; // Fix missing import
+import { Activity, Target } from 'lucide-react'; // Updated import
 
 export default PlayerDetail;

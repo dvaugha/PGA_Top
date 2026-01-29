@@ -10,7 +10,8 @@ export const players = [
         contracts: ["Nike", "TaylorMade", "Rolex", "NetJets", "Huntington Bank"],
         stats2026: { scoringAvg: 68.34, drivingDist: 323.9, sgTotal: 3.385, wins: 1, top10s: 2, points: 2150 },
         stats2025: { scoringAvg: 68.63, drivingDist: 321.0, sgTotal: 2.500, wins: 3, top10s: 15 },
-        recentResults: [{ event: "The American Express", position: "1", score: "-27", earnings: "$1,512,000" }, { event: "Sony Open in Hawaii", position: "DNP", score: "-", earnings: "$0" }]
+        recentResults: [{ event: "The American Express", position: "1", score: "-27", earnings: "$1,512,000" }, { event: "Sony Open in Hawaii", position: "DNP", score: "-", earnings: "$0" }],
+        clubDistances: { "Driver": 315, "3W": 280, "5W": 255, "3i": 235, "4i": 220, "5i": 208, "6i": 195, "7i": 182, "8i": 168, "9i": 155, "PW": 142, "GW": 128, "LW": 105 }
     },
     {
         id: 2,
@@ -22,7 +23,8 @@ export const players = [
         contracts: ["Nike", "TaylorMade", "Omega", "Workday"],
         stats2026: { scoringAvg: 69.12, drivingDist: 326.0, sgTotal: 2.100, wins: 0, top10s: 1, points: 1500 },
         stats2025: { scoringAvg: 68.90, drivingDist: 325.5, sgTotal: 2.150, wins: 2, top10s: 10 },
-        recentResults: [{ event: "The American Express", position: "T12", score: "-18", earnings: "$182,500" }]
+        recentResults: [{ event: "The American Express", position: "T12", score: "-18", earnings: "$182,500" }],
+        clubDistances: { "Driver": 326, "3W": 290, "5W": 265, "3i": 245, "4i": 230, "5i": 215, "6i": 202, "7i": 190, "8i": 175, "9i": 162, "PW": 148, "GW": 135, "LW": 110 }
     },
     {
         id: 3,
@@ -34,7 +36,8 @@ export const players = [
         contracts: ["Nike", "TaylorMade"],
         stats2026: { scoringAvg: 69.50, drivingDist: 305.0, sgTotal: 1.800, wins: 0, top10s: 1, points: 1200 },
         stats2025: { scoringAvg: 69.80, drivingDist: 304.0, sgTotal: 1.500, wins: 1, top10s: 6 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 305, "3W": 275, "7W": 250, "4i": 222, "5i": 210, "6i": 198, "7i": 185, "8i": 172, "9i": 158, "PW": 145, "GW": 130, "LW": 100 }
     },
     {
         id: 4,
@@ -46,7 +49,8 @@ export const players = [
         contracts: ["Titleist", "Dunning"],
         stats2026: { scoringAvg: 69.60, drivingDist: 295.0, sgTotal: 1.600, wins: 0, top10s: 1, points: 1100 },
         stats2025: { scoringAvg: 69.90, drivingDist: 294.0, sgTotal: 1.400, wins: 1, top10s: 5 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 295, "3W": 265, "Hybrid": 240, "4i": 215, "5i": 205, "6i": 192, "7i": 180, "8i": 168, "9i": 155, "PW": 140, "GW": 125, "LW": 95 }
     },
     {
         id: 5,
@@ -58,7 +62,8 @@ export const players = [
         contracts: ["Nike", "Titleist"],
         stats2026: { scoringAvg: 69.70, drivingDist: 308.0, sgTotal: 1.550, wins: 0, top10s: 0, points: 1000 },
         stats2025: { scoringAvg: 70.10, drivingDist: 307.0, sgTotal: 1.300, wins: 1, top10s: 4 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 308, "3W": 278, "Hybrid": 250, "4i": 225, "5i": 212, "6i": 200, "7i": 188, "8i": 175, "9i": 162, "PW": 148, "GW": 132, "LW": 105 }
     },
     {
         id: 6,
@@ -70,7 +75,8 @@ export const players = [
         contracts: ["Adidas", "Callaway", "Aon"],
         stats2026: { scoringAvg: 68.95, drivingDist: 315.2, sgTotal: 1.950, wins: 0, top10s: 1, points: 950 },
         stats2025: { scoringAvg: 69.10, drivingDist: 314.0, sgTotal: 1.800, wins: 1, top10s: 8 },
-        recentResults: [{ event: "The American Express", position: "T8", score: "-20", earnings: "$254,000" }]
+        recentResults: [{ event: "The American Express", position: "T8", score: "-20", earnings: "$254,000" }],
+        clubDistances: { "Driver": 315, "3W": 282, "7W": 258, "4i": 228, "5i": 215, "6i": 202, "7i": 190, "8i": 176, "9i": 163, "PW": 149, "GW": 134, "LW": 108 }
     },
     {
         id: 7,
@@ -82,7 +88,8 @@ export const players = [
         contracts: ["Srixon", "Puma"],
         stats2026: { scoringAvg: 69.80, drivingDist: 300.0, sgTotal: 1.400, wins: 0, top10s: 1, points: 900 },
         stats2025: { scoringAvg: 70.20, drivingDist: 298.0, sgTotal: 1.100, wins: 0, top10s: 3 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 300, "3W": 270, "5W": 245, "4i": 218, "5i": 206, "6i": 194, "7i": 182, "8i": 169, "9i": 156, "PW": 142, "GW": 128, "LW": 100 }
     },
     {
         id: 8,
@@ -94,7 +101,8 @@ export const players = [
         contracts: ["Titleist", "FootJoy"],
         stats2026: { scoringAvg: 69.85, drivingDist: 298.0, sgTotal: 1.350, wins: 0, top10s: 1, points: 850 },
         stats2025: { scoringAvg: 70.30, drivingDist: 296.0, sgTotal: 1.000, wins: 0, top10s: 2 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 298, "3W": 268, "Hybrid": 242, "4i": 217, "5i": 205, "6i": 193, "7i": 181, "8i": 168, "9i": 155, "PW": 141, "GW": 126, "LW": 98 }
     },
     {
         id: 9,
@@ -106,7 +114,8 @@ export const players = [
         contracts: ["Titleist", "FootJoy", "Citi"],
         stats2026: { scoringAvg: 69.30, drivingDist: 310.0, sgTotal: 1.900, wins: 0, top10s: 1, points: 800 },
         stats2025: { scoringAvg: 69.50, drivingDist: 309.0, sgTotal: 1.700, wins: 0, top10s: 5 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 310, "3W": 278, "5W": 252, "4i": 225, "5i": 212, "6i": 200, "7i": 188, "8i": 174, "9i": 160, "PW": 146, "GW": 130, "LW": 102 }
     },
     {
         id: 10,
@@ -118,7 +127,8 @@ export const players = [
         contracts: ["Bonobos", "Morgan Stanley"],
         stats2026: { scoringAvg: 69.90, drivingDist: 302.0, sgTotal: 1.300, wins: 0, top10s: 0, points: 750 },
         stats2025: { scoringAvg: 70.00, drivingDist: 301.0, sgTotal: 1.200, wins: 1, top10s: 3 },
-        recentResults: []
+        recentResults: [],
+        clubDistances: { "Driver": 302, "3W": 272, "5W": 248, "4i": 220, "5i": 208, "6i": 196, "7i": 184, "8i": 170, "9i": 158, "PW": 144, "GW": 128, "LW": 100 }
     },
     {
         id: 14,
@@ -130,7 +140,8 @@ export const players = [
         contracts: ["Ping", "J.Lindeberg", "Cisco"],
         stats2026: { scoringAvg: 69.20, drivingDist: 312.0, sgTotal: 1.700, wins: 0, top10s: 0, points: 400 },
         stats2025: { scoringAvg: 68.85, drivingDist: 311.5, sgTotal: 2.050, wins: 1, top10s: 9 },
-        recentResults: [{ event: "The American Express", position: "T25", score: "-16", earnings: "$65,500" }]
+        recentResults: [{ event: "The American Express", position: "T25", score: "-16", earnings: "$65,500" }],
+        clubDistances: { "Driver": 312, "3W": 280, "Driving Iron": 255, "4i": 226, "5i": 214, "6i": 201, "7i": 189, "8i": 175, "9i": 162, "PW": 148, "GW": 132, "LW": 105 }
     },
     {
         id: 17,
@@ -142,7 +153,8 @@ export const players = [
         contracts: ["Callaway", "TravisMathew"],
         stats2026: { scoringAvg: 66.78, drivingDist: 310.5, sgTotal: 2.800, wins: 1, top10s: 1, points: 1200 },
         stats2025: { scoringAvg: 70.50, drivingDist: 308.2, sgTotal: 0.500, wins: 0, top10s: 3 },
-        recentResults: [{ event: "Sony Open in Hawaii", position: "1", score: "-22", earnings: "$1,494,000" }]
+        recentResults: [{ event: "Sony Open in Hawaii", position: "1", score: "-22", earnings: "$1,494,000" }],
+        clubDistances: { "Driver": 310, "3W": 280, "5W": 255, "4i": 225, "5i": 212, "6i": 200, "7i": 188, "8i": 175, "9i": 162, "PW": 148, "GW": 132, "LW": 105 }
     }
 ];
 
